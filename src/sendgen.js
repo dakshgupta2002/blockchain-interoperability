@@ -62,6 +62,8 @@ class GenerateData extends Component {
       })
       .then(result => {
         const txId = result.events.fundReceived.returnValues._currentTransactionId
+        // CreateBlockHeader details of this trnx id
+        const blockDetails = Web3.eth.getTransaction(txId).blockNumber;
 
         window.alert("Your Unique Transaction Id is : " + txId)
 
